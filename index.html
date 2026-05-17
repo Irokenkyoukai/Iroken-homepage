@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>全日本囲炉裏料理研究家協会（イロケン）公式ホームページ</title>
+<style>
+  body {
+    margin: 0;
+    background-color: #d2b48c;
+    background-image:
+      repeating-linear-gradient(45deg, rgba(139,69,19,0.1) 0, rgba(139,69,19,0.1) 2px, transparent 2px, transparent 8px),
+      repeating-linear-gradient(-45deg, rgba(101,67,33,0.08) 0, rgba(101,67,33,0.08) 2px, transparent 2px, transparent 8px);
+    font-family: "MS PGothic", "ＭＳ Ｐゴシック", "Osaka", sans-serif;
+    color: #000000;
+  }
+  .frame {
+    max-width: 800px;
+    margin: 15px auto;
+    background: #ffffff;
+    border: 3px solid #800000;
+    box-shadow: 6px 6px 0 rgba(0,0,0,0.3);
+  }
+  .topbar {
+    background: linear-gradient(to bottom, #b22222, #800000);
+    color: #ffff00;
+    padding: 8px;
+    text-align: center;
+    font-size: 13px;
+    border-bottom: 2px solid #000;
+  }
+  .header {
+    background: #f5deb3;
+    background-image:
+      repeating-linear-gradient(0deg, rgba(139,69,19,0.08) 0, rgba(139,69,19,0.08) 1px, transparent 1px, transparent 4px);
+    text-align: center;
+    padding: 30px 20px;
+    border-bottom: 4px double #800000;
+  }
+  .org-title {
+    font-family: "Comic Sans MS", "MS PGothic", cursive;
+    font-size: 44px;
+    font-weight: bold;
+    line-height: 1.4;
+    letter-spacing: 2px;
+  }
+  .org-title .c1 { color: #ff0000; }
+  .org-title .c2 { color: #ff8c00; }
+  .org-title .c3 { color: #228b22; }
+  .org-title .c4 { color: #0000ff; }
+  .org-title .c5 { color: #800080; }
+  .org-title .c6 { color: #ff1493; }
+  .org-title .c7 { color: #b8860b; }
+  .org-title span {
+    display: inline-block;
+    text-shadow: 2px 2px 0 rgba(0,0,0,0.2);
+    animation: gentle-sway 3s ease-in-out infinite;
+  }
+  .org-title span:nth-child(even) { animation-delay: 0.3s; }
+  @keyframes gentle-sway {
+    0%, 100% { transform: translateY(0) rotate(-2deg); }
+    50% { transform: translateY(-4px) rotate(2deg); }
+  }
+  .nickname {
+    font-family: "Comic Sans MS", cursive;
+    font-size: 22px;
+    color: #8b4513;
+    margin-top: 15px;
+    font-weight: bold;
+  }
+  .nickname::before, .nickname::after {
+    content: "🔥";
+    margin: 0 8px;
+  }
+  /* BGM Control bar */
+  .bgm-bar {
+    background: linear-gradient(to bottom, #000080, #000040);
+    color: #ffff00;
+    padding: 6px 12px;
+    text-align: center;
+    font-size: 13px;
+    border-bottom: 2px solid #000;
+    font-family: "MS PGothic", sans-serif;
+  }
+  .bgm-bar button {
+    background: linear-gradient(to bottom, #ffff00, #ffd700);
+    border: 2px outset #ffd700;
+    color: #800000;
+    font-weight: bold;
+    padding: 3px 10px;
+    margin: 0 6px;
+    cursor: pointer;
+    font-family: "MS PGothic", sans-serif;
+    font-size: 13px;
+  }
+  .bgm-bar button:active { border-style: inset; }
+  .bgm-bar .note {
+    display: inline-block;
+    animation: musicnote 1.2s ease-in-out infinite;
+  }
+  @keyframes musicnote {
+    0%, 100% { transform: translateY(0) rotate(-10deg); }
+    50% { transform: translateY(-4px) rotate(10deg); }
+  }
+  marquee {
+    background: #000080;
+    color: #ffff00;
+    padding: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    border-top: 2px ridge #c0c0c0;
+    border-bottom: 2px ridge #c0c0c0;
+  }
+  .layout {
+    display: table;
+    width: 100%;
+  }
+  .sidebar {
+    display: table-cell;
+    width: 180px;
+    background: #f0e68c;
+    padding: 15px 10px;
+    border-right: 3px double #8b4513;
+    vertical-align: top;
+  }
+  .sidebar h3 {
+    background: #8b4513;
+    color: #ffff00;
+    padding: 6px 10px;
+    margin: 0 -10px 12px -10px;
+    font-size: 16px;
+    text-align: center;
+    font-family: "MS PGothic", sans-serif;
+  }
+  .menu-btn {
+    display: block;
+    background: linear-gradient(to bottom, #ffffff, #d3d3d3);
+    border: 2px outset #c0c0c0;
+    padding: 8px 10px;
+    margin: 6px 0;
+    text-align: left;
+    color: #000080;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: "MS PGothic", sans-serif;
+    cursor: pointer;
+  }
+  .menu-btn:hover {
+    background: linear-gradient(to bottom, #ffff00, #ffd700);
+    border-style: inset;
+    color: #ff0000;
+  }
+  .menu-btn::before {
+    content: "▶ ";
+    color: #ff0000;
+  }
+  .main {
+    display: table-cell;
+    padding: 25px;
+    vertical-align: top;
+    background: #fffaf0;
+  }
+  .main h2 {
+    color: #800000;
+    font-family: "MS PGothic", sans-serif;
+    font-size: 22px;
+    border-bottom: 3px solid #800000;
+    padding-bottom: 4px;
+    margin-top: 30px;
+    padding-left: 32px;
+    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24'><text y='20' font-size='20'>🔥</text></svg>") no-repeat left center;
+  }
+  .main h2:first-child { margin-top: 0; }
+  .main p {
+    line-height: 1.9;
+    font-size: 15px;
+    margin: 12px 0;
+  }
+  .irorist {
+    display: inline-block;
+    font-family: "Comic Sans MS", cursive;
+    font-weight: bold;
+    font-size: 26px;
+    background: linear-gradient(to right, #ff0000, #ff8c00, #ffff00, #228b22, #0000ff, #800080);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.1);
+    margin: 8px 0;
+    animation: gentle-sway 3s ease-in-out infinite;
+  }
+  .call-box {
+    background: #fffacd;
+    border: 3px double #ff4500;
+    padding: 14px;
+    margin: 18px 0;
+    text-align: center;
+    font-family: "Comic Sans MS", cursive;
+  }
+  .call-box .pop {
+    color: #ff0000;
+    font-weight: bold;
+    font-size: 20px;
+    text-shadow: 2px 2px 0 #ffff00;
+  }
+  .news-box {
+    background: #fffacd;
+    border: 2px dashed #ff4500;
+    padding: 12px 18px;
+    margin: 18px 0;
+  }
+  .news-box .news-title {
+    color: #ff0000;
+    font-weight: bold;
+    font-size: 17px;
+    margin-bottom: 8px;
+    font-family: "Comic Sans MS", cursive;
+  }
+  .news-box .blink {
+    color: #ff0000;
+    font-weight: bold;
+    animation: blink 1s steps(2) infinite;
+  }
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+  .news-box ul {
+    margin: 6px 0;
+    padding-left: 20px;
+    font-size: 14px;
+    line-height: 1.8;
+  }
+  .construction {
+    text-align: center;
+    background: repeating-linear-gradient(45deg, #ffd700, #ffd700 15px, #000000 15px, #000000 30px);
+    padding: 3px;
+    margin: 20px 0;
+  }
+  .construction-inner {
+    background: #ffff00;
+    padding: 14px;
+    font-family: "Comic Sans MS", cursive;
+    font-weight: bold;
+    color: #000000;
+    font-size: 20px;
+  }
+  .construction-inner .digger {
+    display: inline-block;
+    animation: dig 0.8s ease-in-out infinite;
+    font-size: 30px;
+  }
+  @keyframes dig {
+    0%, 100% { transform: rotate(-15deg); }
+    50% { transform: rotate(15deg); }
+  }
+  table.info {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+    font-size: 14px;
+  }
+  table.info th, table.info td {
+    border: 2px ridge #8b4513;
+    padding: 8px 12px;
+    text-align: left;
+  }
+  table.info th {
+    background: #8b4513;
+    color: #ffff00;
+    width: 28%;
+    font-family: "MS PGothic", sans-serif;
+  }
+  table.info td {
+    background: #fff8dc;
+    color: #999;
+    font-style: italic;
+  }
+
+  /* Legal links section in sidebar - serious black serif */
+  .legal-section {
+    margin-top: 18px;
+    padding-top: 12px;
+    border-top: 2px solid #333;
+  }
+  .legal-link {
+    display: block;
+    color: #000000 !important;
+    font-family: "MS Mincho", "ＭＳ 明朝", "Hiragino Mincho ProN", "Yu Mincho", serif;
+    font-weight: bold;
+    font-size: 13px;
+    text-decoration: underline;
+    padding: 6px 4px;
+    margin: 4px 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    line-height: 1.4;
+  }
+  .legal-link:hover {
+    color: #800000 !important;
+    background: rgba(0,0,0,0.05);
+  }
+  .legal-link:visited {
+    color: #000000 !important;
+  }
+
+  /* Modal for privacy/terms */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .modal-overlay.active {
+    display: flex;
+  }
+  .modal-box {
+    background: #ffffff;
+    border: 3px solid #000;
+    max-width: 600px;
+    width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
+    box-shadow: 8px 8px 0 rgba(0,0,0,0.4);
+    font-family: "MS Mincho", "ＭＳ 明朝", "Hiragino Mincho ProN", "Yu Mincho", serif;
+  }
+  .modal-header {
+    background: #000000;
+    color: #ffffff;
+    padding: 12px 18px;
+    font-size: 17px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .modal-close {
+    background: #ffffff;
+    color: #000;
+    border: 2px outset #c0c0c0;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: "MS Mincho", serif;
+    font-size: 14px;
+  }
+  .modal-close:active { border-style: inset; }
+  .modal-body {
+    padding: 20px 25px;
+    font-size: 13px;
+    line-height: 1.9;
+    color: #000;
+  }
+  .modal-body h3 {
+    font-size: 15px;
+    margin: 18px 0 8px 0;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #000;
+  }
+  .modal-body h3:first-child { margin-top: 0; }
+  .modal-body p { margin: 8px 0; }
+  .modal-body ol, .modal-body ul {
+    margin: 6px 0;
+    padding-left: 24px;
+  }
+  .modal-body li { margin: 4px 0; }
+
+  /* Photo gallery */
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 15px 0;
+  }
+  .photo-frame {
+    background: #fff;
+    border: 4px ridge #8b4513;
+    padding: 6px;
+    text-align: center;
+    box-shadow: 3px 3px 0 rgba(0,0,0,0.3);
+  }
+  .photo-placeholder {
+    width: 100%;
+    aspect-ratio: 1;
+    background: linear-gradient(135deg, #d3d3d3, #a9a9a9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #555;
+    font-size: 36px;
+    border: 1px solid #888;
+  }
+  .photo-caption {
+    font-size: 11px;
+    color: #800000;
+    margin-top: 4px;
+    font-family: "MS PGothic", sans-serif;
+  }
+  .gallery-note {
+    background: #fff8dc;
+    border: 2px dotted #8b4513;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 13px;
+    color: #800000;
+    font-family: "MS PGothic", sans-serif;
+  }
+
+  /* グッズ販売 */
+  .goods-banner {
+    background: linear-gradient(135deg, #ff0000, #ff8c00, #ffff00);
+    color: #000;
+    padding: 12px;
+    text-align: center;
+    font-family: "Comic Sans MS", cursive;
+    font-weight: bold;
+    font-size: 18px;
+    border: 4px ridge #ffd700;
+    margin: 15px 0;
+    text-shadow: 1px 1px 0 #fff;
+  }
+  .goods-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin: 15px 0;
+  }
+  .goods-card {
+    background: #fff;
+    border: 3px ridge #b8860b;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 3px 3px 0 rgba(0,0,0,0.2);
+  }
+  .goods-img {
+    width: 100%;
+    aspect-ratio: 1;
+    background: linear-gradient(135deg, #fffacd, #f5deb3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 60px;
+    border: 2px solid #b8860b;
+    margin-bottom: 8px;
+  }
+  .goods-name {
+    font-weight: bold;
+    color: #800000;
+    font-size: 14px;
+    font-family: "MS PGothic", sans-serif;
+  }
+  .goods-price {
+    color: #ff0000;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: "Comic Sans MS", cursive;
+    margin: 6px 0;
+  }
+  .goods-desc {
+    font-size: 11px;
+    color: #555;
+    line-height: 1.5;
+    font-family: "MS PGothic", sans-serif;
+  }
+  .paypay-notice {
+    background: #ffe4e1;
+    border: 2px dashed #ff1493;
+    padding: 10px;
+    text-align: center;
+    margin: 15px 0;
+    font-size: 14px;
+    color: #800000;
+    font-family: "MS PGothic", sans-serif;
+  }
+  .paypay-notice .blink {
+    color: #ff0000;
+    font-weight: bold;
+    animation: blink 1s steps(2) infinite;
+  }
+
+  /* 掲示板 */
+  .bbs {
+    background: #f5f5dc;
+    border: 3px ridge #8b4513;
+    padding: 15px;
+    margin: 15px 0;
+  }
+  .bbs-header {
+    background: #8b4513;
+    color: #ffff00;
+    padding: 8px 12px;
+    margin: -15px -15px 15px -15px;
+    font-family: "Comic Sans MS", cursive;
+    font-weight: bold;
+    text-align: center;
+    font-size: 18px;
+  }
+  .bbs-rules {
+    background: #fffacd;
+    border: 1px dashed #8b4513;
+    padding: 8px 12px;
+    margin-bottom: 12px;
+    font-size: 12px;
+    color: #800000;
+    font-family: "MS PGothic", sans-serif;
+    line-height: 1.6;
+  }
+  .bbs-rules .rules-title {
+    font-weight: bold;
+    color: #ff0000;
+  }
+  /* Cusdis dasai styling - we wrap it in a 1990s-style border */
+  .cusdis-frame {
+    background: #ffffff;
+    border: 3px ridge #c0c0c0;
+    padding: 10px;
+    margin-top: 8px;
+  }
+  .cusdis-placeholder {
+    background: #fff;
+    border: 2px inset #888;
+    padding: 30px 20px;
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    font-family: "MS PGothic", sans-serif;
+    font-size: 13px;
+  }
+  /* Override Cusdis modern styles to look more dasai once embedded */
+  #cusdis_thread {
+    font-family: "MS PGothic", "ＭＳ Ｐゴシック", sans-serif !important;
+  }
+
+  .footer {
+    background: linear-gradient(to bottom, #800000, #4a0000);
+    color: #ffff00;
+    text-align: center;
+    padding: 15px;
+    font-size: 13px;
+    border-top: 4px double #ffd700;
+  }
+  .counter-strip {
+    background: #2f4f4f;
+    color: #ffff00;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+    font-family: "MS PGothic", sans-serif;
+  }
+  .counter-strip img {
+    vertical-align: middle;
+    margin: 0 8px;
+    border: 2px inset #888;
+    background: #000;
+  }
+  .badges {
+    text-align: center;
+    padding: 10px;
+    background: #f5deb3;
+    border-top: 2px solid #8b4513;
+  }
+  .badge {
+    display: inline-block;
+    border: 2px outset #c0c0c0;
+    background: linear-gradient(to bottom, #fff, #c0c0c0);
+    padding: 3px 8px;
+    margin: 3px;
+    font-size: 10px;
+    font-weight: bold;
+    color: #000080;
+    font-family: "MS PGothic", sans-serif;
+  }
+  a { color: #0000ee; }
+  a:visited { color: #551a8b; }
+
+  @media (max-width: 600px) {
+    .layout { display: block; }
+    .sidebar, .main { display: block; width: auto; }
+    .sidebar { border-right: none; border-bottom: 3px double #8b4513; }
+    .gallery { grid-template-columns: repeat(2, 1fr); }
+    .goods-grid { grid-template-columns: 1fr; }
+    .org-title { font-size: 30px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="frame">
+
+<div class="topbar">
+  ★ ★ ★ 全日本囲炉裏料理研究家協会 公式ホームページ ★ ★ ★
+</div>
+
+<div class="bgm-bar">
+  <span class="note">🎵</span>
+  BGM：「ふるさと」
+  <button id="bgm-play" onclick="startBGM()">▶ 再生</button>
+  <button id="bgm-stop" onclick="stopBGM()">■ 停止</button>
+  <span class="note">🎵</span>
+</div>
+
+<div class="header">
+  <div class="org-title">
+    <span class="c1">全</span><span class="c2">日</span><span class="c3">本</span><span class="c4">囲</span><span class="c5">炉</span><span class="c6">裏</span><br>
+    <span class="c2">料</span><span class="c3">理</span><span class="c4">研</span><span class="c5">究</span><span class="c6">家</span><span class="c7">協</span><span class="c1">会</span>
+  </div>
+  <div class="nickname">通称　イ　ロ　ケ　ン</div>
+</div>
+
+<marquee scrollamount="6">★☆ ようこそ、全日本囲炉裏料理研究家協会のホームページへ！イロリスト集合！ ☆★ 第38回全国大会のご案内を更新しました ☆★</marquee>
+
+<div class="layout">
+
+  <div class="sidebar">
+    <h3>★ メニュー ★</h3>
+    <a class="menu-btn" href="#top">トップページ</a>
+    <a class="menu-btn" href="#about">協会概要</a>
+    <a class="menu-btn" href="#gallery">囲炉裏写真館</a>
+    <a class="menu-btn" href="#goods">グッズ販売</a>
+    <a class="menu-btn" href="#join">入会案内</a>
+    <a class="menu-btn" href="#events">行事予定</a>
+    <a class="menu-btn" href="#bbs">掲示板</a>
+    <a class="menu-btn" href="#links">リンク集</a>
+    <a class="menu-btn" href="#contact">お問合せ</a>
+
+    <div class="legal-section">
+      <a class="legal-link" href="#" onclick="openModal('modal-privacy'); return false;">プライバシーポリシー</a>
+      <a class="legal-link" href="#" onclick="openModal('modal-terms'); return false;">利用規約</a>
+    </div>
+  </div>
+
+  <div class="main">
+    <h2 id="top">ごあいさつ</h2>
+    <p>このたびは、全日本囲炉裏料理研究家協会（通称：<b>イロケン</b>）の公式ホームページにお越しいただき、誠にありがとうございます。</p>
+    <p>当協会は、日本の伝統的食文化である「囲炉裏料理」の研究・保存・普及を目的として活動を続けてまいりました。会員一同、炭火のぬくもりと共に培われてきた先人の知恵を、次代へと受け継ぐべく日々精進しております。</p>
+
+    <div class="call-box">
+      <div class="pop">★☆★ イロリスト集合！ ★☆★</div>
+      <p style="margin: 10px 0 0 0; font-size: 14px; color: #000;">
+        囲炉裏を愛するすべての同志を、私たちは「<b>イロリスト</b>」と呼びます。<br>
+        炭火を囲み、語らい、味わう——その喜びを分かち合う仲間たちです。<br>
+        年齢・経験を問わず、囲炉裏に心を寄せるすべての方が、イロリストです。<br>
+        <span style="color:#ff0000; font-weight:bold;">さあ、あなたもイロリストの輪に加わりませんか？</span>
+      </p>
+    </div>
+
+    <p>ホームページのご意見・ご感想は <a href="mailto:webmaster@iroken.com">webmaster@iroken.com</a> までお寄せください。</p>
+
+    <div class="news-box">
+      <div class="news-title">★ NEW! 新着情報 ★</div>
+      <ul>
+        <li><span class="blink">★NEW★</span> ホームページを開設いたしました</li>
+        <li>第38回全国囲炉裏料理大会の参加申込を開始しました</li>
+        <li>新規認定研究家12名が誕生しました</li>
+        <li>会員専用ページのパスワードを変更しました</li>
+      </ul>
+    </div>
+
+    <div class="construction">
+      <div class="construction-inner">
+        <span class="digger">🔨</span> ホームページ工事中！ <span class="digger">🚧</span>
+      </div>
+    </div>
+
+    <h2 id="about">協会概要</h2>
+    <table class="info">
+      <tr><th>名称</th><td>（記入予定）</td></tr>
+      <tr><th>設立</th><td>（記入予定）</td></tr>
+      <tr><th>会員数</th><td>（記入予定）</td></tr>
+      <tr><th>所在地</th><td>（記入予定）</td></tr>
+      <tr><th>年会費</th><td>（記入予定）</td></tr>
+      <tr><th>代表者</th><td>（記入予定）</td></tr>
+    </table>
+
+    <h2 id="gallery">囲炉裏写真館</h2>
+    <div class="gallery-note">
+      ★ 会員の皆様より寄せられた、全国の囲炉裏写真をご紹介しております ★
+    </div>
+    <div class="gallery">
+      <div class="photo-frame">
+        <div class="photo-placeholder">🔥</div>
+        <div class="photo-caption">写真１（準備中）</div>
+      </div>
+      <div class="photo-frame">
+        <div class="photo-placeholder">🍢</div>
+        <div class="photo-caption">写真２（準備中）</div>
+      </div>
+      <div class="photo-frame">
+        <div class="photo-placeholder">🍵</div>
+        <div class="photo-caption">写真３（準備中）</div>
+      </div>
+      <div class="photo-frame">
+        <div class="photo-placeholder">🐟</div>
+        <div class="photo-caption">写真４（準備中）</div>
+      </div>
+      <div class="photo-frame">
+        <div class="photo-placeholder">🍶</div>
+        <div class="photo-caption">写真５（準備中）</div>
+      </div>
+      <div class="photo-frame">
+        <div class="photo-placeholder">🏠</div>
+        <div class="photo-caption">写真６（準備中）</div>
+      </div>
+    </div>
+    <p style="font-size: 12px; color: #666;">※ 写真を投稿していただける会員の方は事務局までご連絡ください。</p>
+
+    <h2 id="goods">グッズ販売</h2>
+    <div class="goods-banner">
+      ☆★☆ イロケン公式グッズ販売中！ ☆★☆<br>
+      <span style="font-size: 14px;">イロリストの証、揃っております！</span>
+    </div>
+
+    <div class="paypay-notice">
+      <span class="blink">★</span> ただいまPayPayでのお支払い準備中です。販売開始まで今しばらくお待ちください。 <span class="blink">★</span>
+    </div>
+
+    <div class="goods-grid">
+      <div class="goods-card">
+        <div class="goods-img">👕</div>
+        <div class="goods-name">イロケンTシャツ</div>
+        <div class="goods-price">￥ ---</div>
+        <div class="goods-desc">（商品準備中）</div>
+      </div>
+      <div class="goods-card">
+        <div class="goods-img">🍶</div>
+        <div class="goods-name">イロケン手ぬぐい</div>
+        <div class="goods-price">￥ ---</div>
+        <div class="goods-desc">（商品準備中）</div>
+      </div>
+      <div class="goods-card">
+        <div class="goods-img">📒</div>
+        <div class="goods-name">囲炉裏ノート</div>
+        <div class="goods-price">￥ ---</div>
+        <div class="goods-desc">（商品準備中）</div>
+      </div>
+      <div class="goods-card">
+        <div class="goods-img">🎒</div>
+        <div class="goods-name">イロケントートバッグ</div>
+        <div class="goods-price">￥ ---</div>
+        <div class="goods-desc">（商品準備中）</div>
+      </div>
+    </div>
+    <p style="font-size: 12px; color: #666;">※ 商品の詳細・販売開始日は決まり次第お知らせいたします。</p>
+
+    <h2 id="bbs">匿名掲示板</h2>
+    <div class="bbs">
+      <div class="bbs-header">★ イロケン掲示板 〜囲炉裏談義〜 ★</div>
+
+      <div class="bbs-rules">
+        <span class="rules-title">【ご利用上のお願い】</span><br>
+        ・お名前は空欄でも投稿できます（匿名OK）<br>
+        ・荒らし・誹謗中傷は管理人にて削除いたします<br>
+        ・書き込みは管理人の承認後に表示されます
+      </div>
+
+      <div class="cusdis-frame">
+        <!--
+          Cusdis 掲示板 setup instructions:
+          1. Go to https://cusdis.com and sign up (free)
+          2. Create a new site, name it "iroken"
+          3. You'll get an APP_ID — replace YOUR_APP_ID below with it
+          4. Uncomment the script tag at the bottom of this file
+        -->
+        <div id="cusdis_thread"
+          data-host="https://cusdis.com"
+          data-app-id="YOUR_APP_ID"
+          data-page-id="iroken-bbs"
+          data-page-url="https://iroken.com"
+          data-page-title="イロケン掲示板"
+          data-theme="light"
+        >
+          <div class="cusdis-placeholder">
+            ※ 掲示板を準備中です。<br>
+            （Cusdis設定後、ここに書き込み欄が表示されます）
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h2 id="events">行事予定</h2>
+    <p style="color:#666; font-style:italic;">（準備中）</p>
+
+    <h2 id="join">入会案内</h2>
+    <p style="color:#666; font-style:italic;">（準備中）</p>
+
+    <h2 id="links">リンク集</h2>
+    <p style="color:#666; font-style:italic;">（準備中）</p>
+
+    <h2 id="contact">お問合せ</h2>
+    <p style="color:#666; font-style:italic;">（準備中）</p>
+  </div>
+
+</div>
+
+<div class="counter-strip">
+  ☆ ご来訪ありがとうございます ☆<br>
+  あなたは
+  <img src="https://visitor-badge.laobi.icu/badge?page_id=iroken.com.homepage&left_color=black&right_color=green&left_text=訪問者" alt="visitor counter">
+  番目のイロリストです
+</div>
+
+<div class="badges">
+  <span class="badge">Netscape 4.0以上推奨</span>
+  <span class="badge">解像度 800×600推奨</span>
+  <span class="badge">リンクフリー</span>
+  <span class="badge">相互リンク募集</span>
+  <span class="badge">無断転載厳禁</span>
+</div>
+
+<div class="footer">
+  Copyright © 1998-2026 全日本囲炉裏料理研究家協会　All Rights Reserved.<br>
+  最終更新日：令和8年5月17日
+</div>
+
+</div>
+
+<!-- ===== Legal Modals ===== -->
+<div class="modal-overlay" id="modal-privacy" onclick="if(event.target===this) closeModal('modal-privacy')">
+  <div class="modal-box">
+    <div class="modal-header">
+      プライバシーポリシー
+      <button class="modal-close" onclick="closeModal('modal-privacy')">×</button>
+    </div>
+    <div class="modal-body">
+      <p>全日本囲炉裏料理研究家協会（以下「当協会」といいます）は、当ホームページをご利用いただく皆様の個人情報の重要性を認識し、その保護に努めます。</p>
+
+      <h3>第１条（取得する情報）</h3>
+      <p>当ホームページでは、以下の情報を取得することがあります。</p>
+      <ol>
+        <li>お問合せフォーム等にご入力いただいた氏名・メールアドレス等の連絡情報</li>
+        <li>掲示板への投稿内容およびIPアドレス</li>
+        <li>アクセス解析のためのアクセス日時・ブラウザ情報等</li>
+      </ol>
+
+      <h3>第２条（利用目的）</h3>
+      <p>取得した情報は、以下の目的のために利用いたします。</p>
+      <ol>
+        <li>お問合せへのご回答</li>
+        <li>当協会からのお知らせ・ご案内の送付</li>
+        <li>掲示板の運営および不適切な投稿の防止</li>
+        <li>サイト改善のための統計分析</li>
+      </ol>
+
+      <h3>第３条（第三者への提供）</h3>
+      <p>当協会は、法令に基づく場合を除き、ご本人の同意なく第三者に個人情報を提供することはありません。</p>
+
+      <h3>第４条（外部サービスの利用）</h3>
+      <p>当ホームページでは、以下の外部サービスを利用しており、これらのサービスを通じて一部の情報が取得されることがあります。</p>
+      <ul>
+        <li>訪問者カウンター（visitor-badge.laobi.icu）</li>
+        <li>掲示板サービス（Cusdis）</li>
+      </ul>
+
+      <h3>第５条（お問合せ）</h3>
+      <p>本ポリシーに関するお問合せは、当協会まで。</p>
+
+      <p style="text-align:right; margin-top: 20px; font-size:12px;">
+        制定：令和8年5月17日
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-terms" onclick="if(event.target===this) closeModal('modal-terms')">
+  <div class="modal-box">
+    <div class="modal-header">
+      利用規約
+      <button class="modal-close" onclick="closeModal('modal-terms')">×</button>
+    </div>
+    <div class="modal-body">
+      <p>本規約は、全日本囲炉裏料理研究家協会（以下「当協会」）が運営する本ホームページ（以下「本サイト」）の利用条件を定めるものです。ご利用にあたっては、本規約に同意いただいたものとみなします。</p>
+
+      <h3>第１条（適用範囲）</h3>
+      <p>本規約は、本サイトの全ての訪問者および利用者に適用されます。</p>
+
+      <h3>第２条（禁止事項）</h3>
+      <p>利用者は、本サイトの利用にあたり、以下の行為をしてはなりません。</p>
+      <ol>
+        <li>法令または公序良俗に違反する行為</li>
+        <li>犯罪行為に関連する行為</li>
+        <li>当協会または第三者の知的財産権、肖像権、プライバシー、名誉その他の権利または利益を侵害する行為</li>
+        <li>掲示板等における誹謗中傷、わいせつ、その他不適切な投稿</li>
+        <li>本サイトの運営を妨害する行為</li>
+        <li>その他、当協会が不適切と判断する行為</li>
+      </ol>
+
+      <h3>第３条（投稿コンテンツ）</h3>
+      <p>掲示板等への投稿内容については、管理人の判断により予告なく削除する場合があります。投稿者は、投稿内容に関する一切の責任を負うものとします。</p>
+
+      <h3>第４条（著作権）</h3>
+      <p>本サイトに掲載されている文章・画像・その他のコンテンツの著作権は、当協会または正当な権利者に帰属します。無断転載・複製を禁じます。</p>
+
+      <h3>第５条（免責事項）</h3>
+      <ol>
+        <li>当協会は、本サイトに掲載する情報の正確性・完全性について保証するものではありません。</li>
+        <li>本サイトの利用により生じた損害について、当協会は一切の責任を負いません。</li>
+        <li>本サイトは予告なく内容を変更・中断・終了することがあります。</li>
+      </ol>
+
+      <h3>第６条（規約の変更）</h3>
+      <p>当協会は、必要に応じて本規約を変更することができるものとします。変更後の規約は、本サイトに掲示した時点で効力を生じます。</p>
+
+      <p style="text-align:right; margin-top: 20px; font-size:12px;">
+        制定：令和8年5月17日
+      </p>
+    </div>
+  </div>
+</div>
+
+<!--
+  Cusdis script — uncomment this AFTER you set up your Cusdis account
+  and replace YOUR_APP_ID above with your actual app ID.
+
+<script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+-->
+
+<script>
+// ===== Modal handlers =====
+function openModal(id) {
+  document.getElementById(id).classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal(id) {
+  document.getElementById(id).classList.remove('active');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.modal-overlay.active').forEach(m => {
+      m.classList.remove('active');
+    });
+    document.body.style.overflow = '';
+  }
+});
+
+// ===== BGM: ふるさと (Public domain folk song, 1914) =====
+let audioCtx = null;
+let bgmPlaying = false;
+let bgmTimeouts = [];
+
+const NOTES = {
+  'C4': 261.63, 'D4': 293.66, 'E4': 329.63, 'F4': 349.23,
+  'G4': 392.00, 'A4': 440.00, 'B4': 493.88, 'C5': 523.25,
+  'D5': 587.33, 'E5': 659.25, 'F5': 698.46, 'G5': 783.99, 'A5': 880.00
+};
+
+const FURUSATO_MELODY = [
+  ['G4', 1], ['G4', 1], ['A4', 1], ['G4', 1], ['C5', 2], ['B4', 2],
+  ['A4', 1], ['A4', 1], ['G4', 1], ['G4', 1], ['G4', 4],
+  ['G4', 1], ['G4', 1], ['A4', 1], ['G4', 1], ['C5', 2], ['B4', 2],
+  ['A4', 1], ['A4', 1], ['B4', 1], ['G4', 1], ['A4', 4],
+  ['E5', 1], ['E5', 1], ['D5', 1], ['C5', 1], ['B4', 2], ['G4', 2],
+  ['A4', 1], ['A4', 1], ['B4', 1], ['G4', 1], ['A4', 4],
+  ['G4', 1], ['G4', 1], ['A4', 1], ['G4', 1], ['C5', 2], ['B4', 2],
+  ['A4', 1], ['A4', 1], ['B4', 1], ['G4', 1], ['C5', 4],
+];
+
+function playNote(freq, startTime, duration) {
+  if (!audioCtx) return;
+  const osc = audioCtx.createOscillator();
+  const gain = audioCtx.createGain();
+  osc.type = 'triangle';
+  osc.frequency.value = freq;
+  gain.gain.setValueAtTime(0, startTime);
+  gain.gain.linearRampToValueAtTime(0.18, startTime + 0.01);
+  gain.gain.exponentialRampToValueAtTime(0.001, startTime + duration * 0.95);
+  osc.connect(gain);
+  gain.connect(audioCtx.destination);
+  osc.start(startTime);
+  osc.stop(startTime + duration);
+}
+
+function startBGM() {
+  if (bgmPlaying) return;
+  if (!audioCtx) {
+    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  }
+  if (audioCtx.state === 'suspended') audioCtx.resume();
+  bgmPlaying = true;
+  const beatDuration = 0.4;
+  scheduleLoop(beatDuration);
+}
+
+function scheduleLoop(beatDuration) {
+  if (!bgmPlaying) return;
+  let currentTime = audioCtx.currentTime + 0.1;
+  FURUSATO_MELODY.forEach(([note, beats]) => {
+    const duration = beats * beatDuration;
+    playNote(NOTES[note], currentTime, duration);
+    currentTime += duration;
+  });
+  const totalDuration = FURUSATO_MELODY.reduce((sum, [_, b]) => sum + b, 0) * beatDuration * 1000;
+  const timeout = setTimeout(() => {
+    if (bgmPlaying) scheduleLoop(beatDuration);
+  }, totalDuration + 1500);
+  bgmTimeouts.push(timeout);
+}
+
+function stopBGM() {
+  bgmPlaying = false;
+  bgmTimeouts.forEach(t => clearTimeout(t));
+  bgmTimeouts = [];
+  if (audioCtx) {
+    audioCtx.close();
+    audioCtx = null;
+  }
+}
+</script>
+
+</body>
+</html>
